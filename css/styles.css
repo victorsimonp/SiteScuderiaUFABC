@@ -1,0 +1,340 @@
+:root {
+    /* Cores */
+    --cor-de-fundo: #ECECEC;
+    --cor-da-fonte: #000000;
+
+    /* Fonte */
+    --fonte-principal: 'Montserrat', sans-serif;
+    --fonte-titulo: 'Oswald', sans-serif;
+    --maior-font-size: 2.25rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .93rem;
+    --pequeno-font-size: .81rem;
+
+    /* Fonte com peso */
+
+    --font-media: 400;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+
+
+
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #73C672, #9BD892, #5FC668);                
+    background-size: cover;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: auto;
+    position: relative;
+    font-size: 20px;
+    font-family: var(--fonte-principal);
+}
+
+
+
+
+/* ====================== Cabeçalho ===================== */
+
+.cabecalho__container {
+    position: absolute;
+    z-index: 1;
+    background-color: var(--cor-de-fundo);
+    
+   
+
+}
+
+.logo__item {
+    padding: 30px 65px;
+    height: 1.2rem;
+    max-width: auto;
+    cursor: context-menu;
+
+}
+
+.cabecalho__textos {
+    text-decoration: none;
+    color: var(--cor-da-fonte);
+    padding-right: 40px;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-semi-bold);
+    font-family: var(--fonte-titulo);
+
+}
+
+.lista_menu {
+    list-style-type: none; /* Remove as bolinhas da lista */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lista_menu li {
+    display: inline; /* Faz com que os itens sejam exibidos em linha */
+    margin-right: 10px; /* Espaçamento entre os itens */
+  }
+
+  .lista_menu a {
+    padding-block: 16px;
+  }
+
+  /* ====================== Menu hamburguer ===================== */
+
+  .hamburguer {
+    margin-right: 0px;
+    display: none;
+    border: none;
+    background: none;
+    width: 37px;
+    border-top: 3px solid #000000;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: " ";
+    display: block;
+    width: 37px;
+    height: 3px;
+    background: #000000;
+    margin: 4px 0;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Estilos do menu */
+.lista_menu {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.lista_menu li {
+    display: inline; 
+    margin-right: 10px; 
+}
+
+.lista_menu a {
+    padding-block: 16px;
+}
+
+.cabecalho__container{
+    display: flex;
+}
+
+
+
+@media (max-width: 1000px) {
+    .hamburguer {
+        z-index: 1;
+        display: block;
+        margin-left: 22.5rem;
+        
+    }
+   
+
+
+    .lista_menu {
+        display: grid;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #5FC668;
+        clip-path: circle(10px at 90% -15%);
+        transition: 1s ease-out;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+    }
+
+    .lista_menu a { 
+        font-size: 24px;
+        opacity: 0;
+        
+    }
+
+    
+
+    .lista_menu li:nth-child(1) a{
+        transition: 0.5s 0.2s;
+    }
+    .lista_menu li:nth-child(2) a{
+        transition: 0.5s 0.4s;
+    }
+    .lista_menu li:nth-child(3) a{
+        transition: 0.5s 0.6s;
+    }
+    .lista_menu li:nth-child(4) a{
+        transition: 0.5s 0.8s;
+    }
+    .lista_menu li:nth-child(5) a{
+        transition: 0.5s 0.9s;
+    }
+    .lista_menu li:nth-child(6) a{
+        transition: 0.5s 1.0s;
+    }
+    
+
+
+    .cabecalho__container.active .lista_menu {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+   
+
+    .cabecalho__container.active .lista_menu a{
+        opacity: 1;
+    }
+
+    .cabecalho__container.active .hamburguer {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .cabecalho__container.active .hamburguer::before{
+        transform:  rotate(135deg);
+    }
+
+    .cabecalho__container.active .hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+
+    }
+}
+
+ 
+
+
+/* ====================== Home ===================== */
+
+.home__section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 80vw;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 10px;
+    
+    
+}
+
+.home__section img {
+    height: 76%;
+    width: 78%;
+    object-fit: cover;
+    z-index: -1;
+    /* Se quiser garantir que o texto fique por cima */
+}
+
+/* ====================== Sobre ===================== */
+
+.home__sobre__back {
+
+    color: var(--text-color);
+    background-color: white;
+    width: 100%;
+    
+
+}
+
+.home__sobre {
+
+    padding-top: 7rem;
+
+}
+
+.titulo__sobre {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.titulo__principal {
+
+    font-size: calc(var(--h1-font-size) + 4rem);
+    font-weight: var(--font-semi-bold);
+    margin-right: 3px;
+    font-family: var(--fonte-titulo);
+
+}
+
+.titulo__lista {
+
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semi-bold);
+
+}
+
+.lista__item {
+
+    display: flex;
+    align-items: center;
+    height: 22px;
+
+}
+
+.sobre__texto {
+
+    display: flex;
+    padding-bottom: 40px;
+
+}
+
+.texto__item {
+
+    font-size: var(--pequeno-font-size);
+    text-align: justify;
+
+}
+
+.texto__item p {
+
+    font-weight: var(--font-media);
+
+}
+
+
+.representamos {
+    font-size: 20px;
+    padding-left: 35px;
+    padding-right: 160px;
+
+}
+
+.prezamos {
+    font-size: 20px;
+    padding-left: 160px;
+    padding-right: 35px;
+
+}
+
+.imagem__equipe {
+    width: 45%;
+    margin-bottom: 100px;
+
+}
