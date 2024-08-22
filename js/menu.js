@@ -1,22 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburguer = document.querySelector('.hamburguer');
-    const cabecalhoContainer = document.querySelector('.cabecalho__container');
-    const menuLinks = document.querySelectorAll('.lista_menu a');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    // Verifique se os elementos existem antes de adicionar o evento
-    if (hamburguer && cabecalhoContainer) {
+    if (hamburguer && mobileMenu) {
         hamburguer.addEventListener('click', function() {
-            cabecalhoContainer.classList.toggle('active');
-        });
-
-        // Adiciona o evento de clique em cada link do menu
-        menuLinks.forEach(function(link) {
-            link.addEventListener('click', function() {
-                // Fecha o menu ao clicar em um link
-                cabecalhoContainer.classList.remove('active');
-            });
+            // Alterna a classe active no hambúrguer
+            hamburguer.classList.toggle('active');
+            // Alterna a visibilidade do menu
+            if (mobileMenu.classList.contains('transform') && mobileMenu.classList.contains('-translate-x-full')) {
+                mobileMenu.classList.remove('transform', '-translate-x-full');
+                mobileMenu.classList.add('open');
+            } else {
+                mobileMenu.classList.remove('open');
+                mobileMenu.classList.add('transform', '-translate-x-full');
+            }
         });
     } else {
-        console.error('Elementos não encontrados: certifique-se de que .hamburguer e .cabecalho__container existem no DOM.');
+        console.error('Elementos não encontrados: certifique-se de que .hamburguer e #mobile-menu existem no DOM.');
     }
 });
