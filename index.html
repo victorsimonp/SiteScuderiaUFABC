@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="./js/formulario.js"></script>
     <title>FSAE Scuderia UFABC</title>
 </head>
 
@@ -114,15 +115,15 @@
                 <div class="relative w-[280px] h-[380px] max-w-full transition-transform duration-700 transform-style-3d hover:rotate-y-180"
                     id="flip-card">
                     <div
-                        class="absolute w-full h-full bg-white border-2 border-green-500 rounded-lg transform rotate-y-180 backface-hidden back-card">
-                        <p class="text-[16px] p-4 text-left">Responsável pelo desenvolvimento e dimensionamento de
+                        class="absolute w-full h-full bg-white drop-shadow-lg border-2 border-green-500 rounded-lg transform rotate-y-180 backface-hidden back-card">
+                        <p class="text-[16px] p-4 text-left ">Responsável pelo desenvolvimento e dimensionamento de
                             componentes de frenagem, garantindo a segurança do piloto. Quando falamos do sistema de
                             frenagem do carro, podemos inserir o conjunto de pedaleiras, que vai além da frenagem em si,
                             nesse conjunto também está inserido o pedal responsável pela aceleração do carro.</p>
                     </div>
                     <div
                         class="absolute w-full h-full bg-white border-2 border-green-500 rounded-lg backface-hidden front-card">
-                        <p class="text-3xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Freios
+                        <p class=" drop-shadow-lg text-3xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Freios
                         </p>
                     </div>
                 </div>
@@ -241,6 +242,42 @@
             </div>
 
             
+        </div>
+    </section>
+    <section class="bg-gray-200 ">
+        <div class="bg-zinc-900 h-3/6 flex flex-wrap justify-center pb-28 mt-16 "> 
+            <h1 class="text-9xl text-white py-4 ">1°</h1>
+            <p class="text-5xl text-white py-4">Com <br>
+                O apoio <br>
+                De vocês</p>
+        </div>
+        <div class="bg-gray-200 h-3/6 flex flex-col items-start mb-36  ">
+            <h1 class="text-5xl mt-20  font-bold pb-4 ml-16">Seja um patrocinador desse sonho</h1>
+            <div class="w-4/12 h-[520px] bg-gray-300 p-4 ml-16">
+                <form class="flex flex-col space-y-7">
+                    <div>
+                        <label for="nome" class="block text-gray-700 font-bold mb-2">Nome:</label>
+                        <input type="text" id="nome" name="nome" class="w-full p-2 border border-gray-400 rounded">
+                    </div>
+                    <div>
+                        <label for="empresa" class="block text-gray-700 font-bold mb-2">Nome da Empresa:</label>
+                        <input type="text" id="empresa" name="empresa" class="w-full p-2 border border-gray-400 rounded">
+                    </div>
+                    <div>
+                        <label for="area" class="block text-gray-700 font-bold mb-2">Qual área deseja patrocinar:</label>
+                        <input type="text" id="area" name="area" class="w-full p-2 border border-gray-400 rounded">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email para contato:</label>
+                        <input type="email" id="email" name="email" class="w-full p-2 border border-gray-400 rounded">
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
 
